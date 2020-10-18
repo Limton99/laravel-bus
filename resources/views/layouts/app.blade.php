@@ -7,17 +7,39 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="../../css/app.css">
 </head>
-<body class>
-<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-    <h5 class="my-0 mr-md-auto font-weight-normal">Test Project</h5>
-    <nav class="my-2 my-md-0 mr-md-3">
-{{--        <a class="p-2 text-dark" href="{{route('cruises')}}">ALL</a>--}}
-        <!-- <a class="p-2 text-dark" href="#">Enterprise</a>
-        <a class="p-2 text-dark" href="#">Support</a>
-        <a class="p-2 text-dark" href="#">Pricing</a> -->
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Test Company</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Продажа билетов</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Список Администраторов</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('cruises')}}">Автобусы</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Статистика</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Пассажиры</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Расписание</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">История</a>
+                </li>
+            </ul>
+        </div>
     </nav>
     <!-- <a class="btn btn-outline-primary" href="#">Sign up</a> -->
-</div>
 <div class="container">
     @yield('content')
 </div>
