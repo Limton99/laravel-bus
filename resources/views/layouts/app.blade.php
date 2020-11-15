@@ -36,6 +36,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">История</a>
                 </li>
+
             </ul>
         </div>
     </nav>

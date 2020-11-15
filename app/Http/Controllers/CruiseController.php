@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Cruise;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 class CruiseController extends Controller
@@ -42,5 +43,14 @@ class CruiseController extends Controller
         $cruise->delete();
 
         return redirect()->route('cruises');
+    }
+
+    public function search(Request $request) {
+//        dd($request);
+        $from = $request->get("from");
+        $to = $request->input("to");
+        $cruise = DB::table('cruises')->where('from', 'like', '%'.$from.'%')
+            ->where('to', 'like', '%'.$to.'%')->get();
+        return view('cruises', ['cruises' => $cruise]);
     }
 }

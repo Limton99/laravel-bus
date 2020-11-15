@@ -16,7 +16,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [CruiseController::class, 'cruise'])->name('cruises');
-Route::get('/cruise/{id}', [CruiseController::class, 'cruiseOne'])->name('cruise-one');
+Route::get('/asd/{id}', [CruiseController::class, 'cruiseOne'])->name('cruise-one');
 Route::get('/delete/{id}', [PassengerController::class, 'delete'])->name('delete-passenger');
+Route::get('/search', [CruiseController::class, 'search'])->name('search');
+//Route::get('/searched', [CruiseController::class, 'search'])->name('searched-cruise');
 
 

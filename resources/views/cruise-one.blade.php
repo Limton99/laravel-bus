@@ -1,6 +1,35 @@
 @extends('layouts.app')
 
 @section('content')
+
+    <br>
+    <div class="info">
+        <img src="/{{$cruise->image}}" style="width:100%" />
+        <h2>{{$cruise->name}}</h2>
+        <b>Отправление</b>
+        <p class="card-text">Дата - {{$cruise->departure_date}}</p>
+        <b>Прибытие</b>
+        <p class="card-text">Дата - {{$cruise->arrival_date}}</p>
+        <div class="bus">
+            <div>
+                <b>Автобус</b>
+                <p class="card-text">{{$cruise->bus}}</p>
+            </div>
+            <div>
+                <b>Номер</b>
+                <p>{{$cruise->bus_number}}</p>
+            </div>
+            <div>
+                <br>
+                <p>{{$cruise->capacity}} мест</p>
+            </div>
+
+        </div>
+        {{--    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">--}}
+        {{--        Launch demo modal--}}
+        {{--    </button>--}}
+    </div>
+    <br>
     <table class="table table-striped">
         <thead>
         <tr>
@@ -26,6 +55,30 @@
         @endforeach
                 </tbody>
             </table>
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <style>
         .bus {
             display: flex;
@@ -33,6 +86,18 @@
 
         .bus div {
             margin-left: 15px;
+            width: 80%;
+        }
+
+        .info {
+            border: 1px solid;
+            padding: 10px;
+            box-shadow: 5px 10px;
+            max-width: 60%;
+            margin-left: 20%;
+            margin-right: 20%;
+            text-align: center;
+            align-items: center;
         }
     </style>
 @endsection
