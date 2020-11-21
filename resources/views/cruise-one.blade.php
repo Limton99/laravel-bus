@@ -3,6 +3,9 @@
 @section('content')
 
     <br>
+        <a type="button" class="btn btn-outline-primary" href="{{route('make-order', $cruise->id)}}">
+            Сделать заказ
+        </a>
     <div class="info">
         <img src="/{{$cruise->image}}" style="width:100%" />
         <h2>{{$cruise->name}}</h2>
@@ -48,7 +51,7 @@
                     <td>{{$el->place}}</td>
                     <td><button class="btn btn-success">Online</button></td>
                     <td><a href="" class="btn btn-primary">Отправить чек</a></td>
-                    <td><a href="" class="btn btn-warning">Редактировать</a></td>
+                    <td><a href="{{route('update-passenger', $el->id)}}" class="btn btn-warning">Редактировать</a></td>
                     <td><a href='{{route('delete-passenger', $el->id)}}' class="btn btn-danger">Удалить</a></td>
                 </tr>
 

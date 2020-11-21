@@ -49,8 +49,10 @@ class CruiseController extends Controller
 //        dd($request);
         $from = $request->get("from");
         $to = $request->input("to");
-        $cruise = DB::table('cruises')->where('from', 'like', '%'.$from.'%')
-            ->where('to', 'like', '%'.$to.'%')->get();
+        $cruise = DB::table('cruises')->where('from', '=', $from)
+            ->where('to', '=', $to)->get();
         return view('cruises', ['cruises' => $cruise]);
     }
+
+
 }
